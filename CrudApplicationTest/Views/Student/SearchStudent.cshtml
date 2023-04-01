@@ -1,0 +1,53 @@
+﻿@model IEnumerable<CrudApplicationTest.Models.Student>
+@{
+    ViewData["Title"] = "SearchStudent";
+    
+}
+
+<div class="container justify-content-center">
+
+    <div class="row">
+        <div class="col-10 offset-1">
+            
+             <form asp-controller="Student" asp-action="SearchStudent">
+            <span class="btn-group">
+                <input class="form-control" type="number" name="id" placeholder="Search Key" />
+                <input class="p-1 btn btn-sm btn-info" type="submit" value="Search" />
+            </span>
+        </form>
+            
+        <h1 class="text-primary text-center">STUDENT</h1>
+            <p class="text-center text-success">@TempData["error"]</p>
+            <table class="table table-bordered">
+                <tr class="text-center">
+                    <th>StudentId</th>
+                    <th>Name</th>                    
+                    <th>Batch</th>
+                    <th>Phone Number</th>
+                    <th>State</th>
+                    <th>City</th>
+                    <th>Pincode</th>
+                    <th>Action</th>
+                </tr>
+                @foreach(var data in Model)
+                {
+                  
+                    <tr class="text-center">
+                        <td>@data.StudentId</td>
+                        <td>@data.Name</td>                       
+                        <td>@data.Batch</td>
+                        <td>@data.PhoneNo</td>
+                        <td>@data.State</td>
+                        <td>@data.City</td>
+                        <td>@data.Pincode</td>
+                        <td>
+                            <a class="btn btn-sm btn-warning" asp-controller="Student" asp-action="Edit" asp-route-id="@data.StudentId">Edit</a>
+                            <a class="btn btn-sm btn-danger" asp-controller="Student" asp-action="Delete" asp-route-id="@data.StudentId">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>
+
