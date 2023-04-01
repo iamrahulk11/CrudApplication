@@ -2,8 +2,7 @@
 
 ## *Rahul Kumar*
 
-**Student Management** prompts the user to save the details of the student's name,batch,phone number,state,city and their pincode.This is created to help 
-the user to save the data of his student.
+**Student Management** prompts the user to save the details of the students.this is created to help the user to save the data of his student.
 
 Time spent: **5** hours spent in total
 
