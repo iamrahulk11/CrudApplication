@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using CrudApplicationTest.Data;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Options;
 
 internal class Program
 {
@@ -9,10 +11,12 @@ internal class Program
 
         // Add services to the container.
         builder.Services.AddControllersWithViews();
-        
+        builder.Services.AddMvc();
         builder.Services.AddDbContext<ApplicationContext>(
             o => o.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
+        //builder.Services.AddDbContext<ApplicationContext>(o => o.EnableDetailedErrors());
+        builder.Services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+       // builder.Services.TryAddSingleton<IConfiguration>(ConfigurationManager);
         var app = builder.Build();
 
 

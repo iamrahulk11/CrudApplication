@@ -18,7 +18,13 @@
         </form>
             <a class="btn btn-sm btn-success" style="margin-left:20px;" asp-controller="Student" asp-action="Create">Create</a>
             
+            <a class="btn btn-sm btn-success" style="margin-left:20px;" asp-controller="Student" asp-action="XmlExport" name="action">  
+                    <i class="fas fa-file-download"> Export Data </i>  
+                </a>
+               
+            </div>  
         </div>
+
             <p class="text-center text-success">@TempData["error"]</p>
             <table class="table table-bordered">
                 <tr class="text-center">
@@ -51,5 +57,4 @@
             </table>
         </div>
     </div>
-</div>
 
