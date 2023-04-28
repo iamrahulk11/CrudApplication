@@ -15,6 +15,7 @@ The following **required** functionality and implemented is completed:
 * [x] User can search the students data with the help of student's ID ,this id is auto generated
 * [x] User can Delete the Student's data
 * [x] User can view all the student's data
+* [x] User can export the data into XML file
 * [x] Connected to Database
 * [ ] List anything else that you did to improve the app functionality or design!
 
